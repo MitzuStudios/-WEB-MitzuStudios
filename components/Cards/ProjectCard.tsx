@@ -33,13 +33,13 @@ export default function ProjectCard({
       <BorderBeam
         duration={5}
         size={400}
-        className="from-transparent via-purple-500 to-transparent"
+        className="from-transparent via-white to-transparent"
       />
       <BorderBeam
         duration={5}
         delay={3}
         size={400}
-        className="from-transparent via-purple-500 to-transparent"
+        className="from-transparent via-white to-transparent"
       />
 
       <div
@@ -78,7 +78,7 @@ export default function ProjectCard({
       <CardFooter className="p-6 flex justify-between items-center">
         <Link href={website} passHref legacyBehavior>
           <a target="_blank" rel="noopener noreferrer">
-            <Button variant={"primary"}>
+            <Button variant={"default"}>
               Sitio Web
             </Button>
           </a>

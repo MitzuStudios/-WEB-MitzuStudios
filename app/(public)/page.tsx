@@ -6,58 +6,61 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import { Particles } from "@/components/magicui/particles";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
-
   const router = useRouter();
 
-  const { resolvedTheme } = useTheme();
-  const [color, setColor] = useState("#ffffff");
- 
-  useEffect(() => {
-    setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
-  }, [resolvedTheme]);
-
   return (
-    <main className="mb-12">
+    <main className="min-h-screen text-white">
+      {/* Hero Section */}
       <div className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden">
         <Particles
-        className="absolute inset-0 z-0"
-        quantity={100}
-        ease={80}
-        color={color}
-        refresh
-         />
+          className="absolute inset-0 z-0 opacity-70"
+          quantity={100}
+          ease={80}
+          color={"#ffffff"}
+          refresh
+        />
 
         <section className="relative z-10 flex flex-col items-center text-center px-4" id="hero">
-          <TextAnimate as="h1" animation="slideRight" className="text-4xl md:text-6xl font-extrabold">
+          <div className="p-4">
+            <Image
+              src={"/Logo/logo.png"}
+              width={180}
+              height={180}
+              alt="Logo MitzuStudios"
+            />
+          </div>
+          <TextAnimate 
+            as="p" 
+            animation="fadeIn" 
+            className="text-xl md:text-2xl font-bold mt-6"
+          >
             MITZUSTUDIOS
           </TextAnimate>
-          <TextAnimate as="h2" animation="slideLeft" className="text-sm md:text-md font-extrabold text-center mt-2">
-            Construyendo hoy el futuro que imagino para mañana
-          </TextAnimate>
+          <TextAnimate as="p" animation="fadeIn" className="mt-4 text-gray-300 max-w-md">Construyendo hoy el futuro que imagino para mañana</TextAnimate>
           
-          <div className="mt-4 flex space-x-4">
-              <Button className="text-sm md:text-md" variant={"primary"} onClick={() => router.push("/projects")}>Ver Proyectos</Button>
+
+          {/*
+          <div className="mt-8 flex gap-4">
+            <Button 
+              variant="outline" 
+              className="bg-transparent text-white border-purple-500 hover:bg-purple-500/10 hover:text-white"
+              onClick={() => router.push('#aboutme')}
+            >
+              Botón 1
+            </Button>
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700 text-white"
+              onClick={() => router.push('#contact')}
+            >
+              Botón 2
+            </Button>
           </div>
+          */}
         </section>
       </div>
-
-      <section className="w-full flex flex-col items-center mt-12 px-4" id="aboutme">
-        <TextAnimate as="h1" animation="slideUp" className="text-3xl md:text-4xl font-extrabold text-center">
-          SOBRE NOSOTROS
-        </TextAnimate>
-        <p className="text-center text-sm md:text-md font-regular mt-6 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
-          {`Bienvenidos a MitzuStudios, una empresa dedicada a la administración y gestión de comercios innovadores. Nuestra misión es proporcionar soluciones eficientes y creativas para impulsar el éxito de nuestros clientes.
-
-Oni Workshop es uno de nuestros principales proyectos, donde combinamos arte y tecnología para ofrecer productos únicos y de alta calidad. Además, estamos expandiendo nuestros horizontes con planes futuros para incluir servicios de desarrollo web, ayudando a empresas a establecer y mejorar su presencia en línea.
-
-En MitzuStudios, creemos en la innovación constante y en la creación de valor a través de la colaboración y el compromiso con la excelencia. Nuestro equipo está compuesto por profesionales apasionados y expertos en sus campos, listos para enfrentar cualquier desafío y convertir ideas en realidades.
-
-Únete a nosotros en este emocionante viaje y descubre cómo podemos ayudarte a alcanzar tus metas.`}
-        </p>
-      </section>
-
     </main>
   );
 }

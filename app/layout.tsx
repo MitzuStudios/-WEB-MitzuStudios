@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 import "./../styles/globals.css";
-import Providers from "@/app/providers";
+import { Analytics } from "@vercel/analytics/react"
 import clsx from "clsx";
 
 const quicksand = Quicksand({
@@ -20,20 +20,12 @@ export const metadata: Metadata = {
   },
 };
 
-  export const viewport: Viewport = {
-    themeColor: [
-      { media: "(prefers-color-scheme: light)", color: "white" },
-      { media: "(prefers-color-scheme: dark)", color: "black" },
-    ],
-  };
-
   export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
       <html lang="es" suppressHydrationWarning>
         <body className={clsx("min-h-screen",quicksand.variable)} >
-          <Providers>
           {children}
-          </Providers>
+          <Analytics/>
         </body>
       </html>
     );

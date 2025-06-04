@@ -26,7 +26,7 @@ const Error404: React.FC = () => {
           </p>
           <p className="text-sm text-primary">
             Revisa {' '}
-            <Link href="https://neenbyss.com" className="text-purple-600 dark:text-purple-400 hover:underline neon-text">
+            <Link href="https://neenbyss.com" className="text-blue-600 hover:underline neon-neenbyss">
               Neenbyss
             </Link>
           </p>
@@ -34,7 +34,7 @@ const Error404: React.FC = () => {
 
         <Link
           href="/"
-          className="inline-block px-6 py-3 bg-purple-400 text-white font-semibold rounded-lg hover:bg-purple-500 transition-all animated-button"
+          className="inline-block px-6 py-3 bg-purple-400 text-white font-semibold rounded-xl hover:bg-purple-500 transition-all animated-button"
         >
           Regresar a la página principal
         </Link>
