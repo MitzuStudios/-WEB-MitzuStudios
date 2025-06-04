@@ -11,16 +11,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="backdrop-blur-lg py-3 fixed w-full z-50 bg-background/90 border-b border-gray-300 dark:border-gray-700 shadow-md">
+    <header className="backdrop-blur-lg py-3 fixed w-full z-50 bg-background/90 border-b shadow-md">
       <div className="container mx-auto flex justify-between items-center px-6">
    
         <div className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-300">
           <Link href="/">
-            <Logo className="cursor-pointer w-10 h-10 transition-transform duration-300 hover:scale-110" />
-          </Link>
-          <Link href="/">
             <span className="text-xl font-bold cursor-pointer">
-              MitzuStudios
+              MITZUSTUDIOS
             </span>
           </Link>
         </div>
@@ -70,17 +67,14 @@ const Navbar = () => {
                 className="relative block py-2 md:py-0 text-center text-sm font-semibold text-foreground transition-colors duration-300 hover:text-primary after:block after:content-[''] after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 after:hover:w-full"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Personal
+                Contacto
               </Link>
-            </li>
-            <li className="mt-4 md:mt-0 flex justify-center md:justify-start">
-              <ThemeToggle />
             </li>
           </ul>
         </nav>
       </div>
 
-      <ScrollProgress className="top-[65px]" />
+      <ScrollProgress className="top-[53px]"/>
     </header>
   );
 };
