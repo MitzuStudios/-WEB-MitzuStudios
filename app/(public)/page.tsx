@@ -40,25 +40,6 @@ export default function Home() {
             MITZUSTUDIOS
           </TextAnimate>
           <TextAnimate as="p" animation="fadeIn" className="mt-4 text-gray-300 max-w-md">Construyendo hoy el futuro que imagino para mañana</TextAnimate>
-          
-
-          {/*
-          <div className="mt-8 flex gap-4">
-            <Button 
-              variant="outline" 
-              className="bg-transparent text-white border-purple-500 hover:bg-purple-500/10 hover:text-white"
-              onClick={() => router.push('#aboutme')}
-            >
-              Botón 1
-            </Button>
-            <Button 
-              className="bg-purple-600 hover:bg-purple-700 text-white"
-              onClick={() => router.push('#contact')}
-            >
-              Botón 2
-            </Button>
-          </div>
-          */}
         </section>
       </div>
     </main>
